@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/hql
+    username: root
+    password: root
+server:
+  servlet:
+    context-path: /
+  port: 8080
+db:
+  driverLocation:
