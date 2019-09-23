@@ -1,6 +1,6 @@
 package com.hql.service.impl;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.hql.dao.UserTableMapper;
 import com.hql.entity.UserTable;
 import com.hql.service.UserTableService;
