@@ -48,7 +48,7 @@ public class TextController {
         return active+girl.getName()+girl.getSex()+girl.getAge()+id;
     }
 
-    @Scheduled(cron = "0/3 * * * * ?")
+    @Scheduled(cron = "* * * * 1 ?")
     public void show(){
         System.out.println(new Date());
         logger.info("Hello world");
