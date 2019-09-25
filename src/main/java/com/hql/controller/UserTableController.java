@@ -1,15 +1,12 @@
 package com.hql.controller;
 
-import com.hql.config.Result;
+import com.hql.utils.R;
 import com.hql.entity.UserTable;
 import com.hql.service.UserTableService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.HtmlUtils;
 
 import java.util.List;
@@ -21,7 +18,7 @@ import java.util.Objects;
  * @date 2019/9/23 17:07
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping()
 public class UserTableController {
 
     private static Logger logger = LogManager.getLogger(UserTableController.class);
@@ -36,18 +33,21 @@ public class UserTableController {
         return userTableService.queryAllUserTableId(userId);
     }
 
-    @RequestMapping("/login")
-    public Result login(@RequestBody UserTable userTable){
-
-        // 对 html 标签进行转义，防止 XSS 攻击
+    @PostMapping("/login")
+    public R login(@RequestBody UserTable userTable){
         String username = userTable.getName();
+        String password = userTable.getPassword();
+        if("".equals(username)){
+            return R.error("用户名不能为空");
+        }
+        if("".equals(password)){
+            return R.error("密码不能为空");
+        }
         username = HtmlUtils.htmlEscape(username);
         if (!Objects.equals("admin", username) || !Objects.equals("123456", userTable.getPassword())) {
-            String message = "账号密码错误";
-            System.out.println("test");
-            return new Result(400);
+            return R.error(400,"用户名或密码错误");
         } else {
-            return new Result(200);
+            return R.ok();
         }
     }
 }

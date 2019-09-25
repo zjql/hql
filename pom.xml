@@ -19,6 +19,9 @@
         <lombok.version>1.16.10</lombok.version>
         <mybatisplus.version>2.2.0</mybatisplus.version>
         <mybatisplus.spring.boot.version>1.0.5</mybatisplus.spring.boot.version>
+        <mybatis.version>3.4.6</mybatis.version>
+        <mysql.connector.version>5.1.6</mysql.connector.version>
+        <httpcore.version>4.4.10</httpcore.version>
     </properties>
 
     <dependencies>
@@ -49,12 +52,12 @@
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
-            <version>3.4.6</version>
+            <version>${mybatis.version}</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.6</version>
+            <version>${mysql.connector.version}</version>
         </dependency>
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -66,6 +69,12 @@
             <artifactId>mybatis-plus</artifactId>
             <version>${mybatisplus.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>${httpcore.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
