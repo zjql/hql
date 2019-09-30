@@ -1,6 +1,5 @@
 package com.hql.utils;
 
-import lombok.Data;
 import org.apache.http.HttpStatus;
 
 import java.util.HashMap;
@@ -10,7 +9,6 @@ import java.util.Map;
  * @author 开发者中文姓名
  * @date 2019/9/24 16:18
  */
-@Data
 public class R extends HashMap<String,Object>{
 
     private static final long serialVersionUID = 1L;
