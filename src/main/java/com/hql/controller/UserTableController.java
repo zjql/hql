@@ -3,6 +3,8 @@ package com.hql.controller;
 import com.hql.utils.R;
 import com.hql.entity.UserTable;
 import com.hql.service.UserTableService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +21,19 @@ import java.util.Objects;
  */
 @RestController
 @RequestMapping()
+@Api(value = "用户测试模块")
 public class UserTableController {
 
     private static Logger logger = LogManager.getLogger(UserTableController.class);
 
     @Autowired
     private UserTableService userTableService;
+
+    @ApiOperation(value = "添加用户",notes = "根据参数添加用户")
+    @PostMapping(value = "/getUser")
+    public Object getUser(){
+        return new UserTable(123,"张晨","123123");
+    }
 
     @RequestMapping("/query/{userId}")
     public List<UserTable> queryUserTable(@PathVariable Integer userId){

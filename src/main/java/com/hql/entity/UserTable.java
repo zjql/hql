@@ -9,6 +9,16 @@ import java.util.Date;
 @TableName("user_table")
 public class UserTable {
 
+
+    public UserTable(){
+
+    }
+
+    public UserTable(Integer id, String name,String password){
+        this.id = id;
+        this.name = name;
+        this.password = password;
+    }
     private Integer id;
 
     private String name;
