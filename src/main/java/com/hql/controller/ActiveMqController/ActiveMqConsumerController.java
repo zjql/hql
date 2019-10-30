@@ -1,4 +1,4 @@
-package com.hql.controller;
+package com.hql.controller.ActiveMqController;
 
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.messaging.handler.annotation.SendTo;

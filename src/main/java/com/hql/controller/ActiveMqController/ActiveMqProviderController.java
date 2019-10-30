@@ -1,4 +1,4 @@
-package com.hql.controller;
+package com.hql.controller.ActiveMqController;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -13,7 +13,7 @@ import javax.jms.Topic;
  * @date 2019/10/30 9:42
  */
 @Configuration
-public class BeanConfig {
+public class ActiveMqConfig {
 
     @Bean
     public Queue queue(){

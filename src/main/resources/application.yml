@@ -23,7 +23,7 @@ spring:
         max-idle: 10      # 连接池中的最大空闲连接
         min-idle: 5       # 连接池中的最小空闲连接
   activemq:
-    broker-url: tcp://127.0.0.1:61616 #mqUrl
+#    broker-url: tcp://127.0.0.1:61616 #mqUrl
     user: admin
     password: admin
     in-memory: true  #true 表示使用内置的MQ，false则连接服务器
@@ -31,8 +31,13 @@ spring:
       enabled: false #true 表示使用连接池；false时，每发送一条数据创建一个连接
       max-connections: 10 #连接池最大连接数
       idle-timeout: 30000 #空闲的连接过期时间 默认为30秒
-#  jms:
-#    pub-sub-domain: true
+  jms:
+    pub-sub-domain: true
+#  rabbitmq:
+#    host: 101.200.44.140
+#    port: 15672
+#    username: admin
+#    password: 123456
 
 
 
