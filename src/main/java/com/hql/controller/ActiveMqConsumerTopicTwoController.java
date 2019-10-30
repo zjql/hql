@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ActiveMqConsumerTopicTwoController {
 
-    @JmsListener(destination = "active.topic")
-    public void readActiveTopicMsg(String message){
-        System.out.println("接收消息topic2"+message);
+    @JmsListener(destination = "ActiveMqTopic")
+    public void readActiveTopicMsg(String msg){
+        System.out.println("ActiveMqTopic_2接收:"+msg);
 
     }
 }

@@ -15,7 +15,7 @@ public class MessageTopicConsumer {
     //定义ActiveMQ连接
     private static final String ACTIVEMQ_URL = "tcp://127.0.0.1:61616";
     //定义接收消息的主题名称
-    private static final String TOPIC_NAME = "MyTopicMessage";
+    private static final String TOPIC_NAME = "ActiveMqTopic";
 
     public static void main(String[] args) throws JMSException {
         //创建工厂连接

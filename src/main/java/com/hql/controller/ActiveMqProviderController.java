@@ -1,13 +1,13 @@
 package com.hql.controller;
 
-import org.apache.activemq.broker.region.Queue;
-import org.apache.activemq.broker.region.Topic;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsMessagingTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.jms.Destination;
+import javax.jms.Queue;
+import javax.jms.Topic;
 
 /**
  * @author 开发者中文姓名
@@ -27,13 +27,13 @@ public class ActiveMqProviderController {
     @Autowired
     private Topic topic;
 
-    @RequestMapping("/sendmsg")
+    @RequestMapping("/send")
     public void sendMsg(String msg){
-        this.jmsMessagingTemplate.convertAndSend((Destination) this.queue,msg);
+        this.jmsMessagingTemplate.convertAndSend(this.queue,msg);
     }
 
-    @RequestMapping("/send")
+    @RequestMapping("/sendTopic")
     public void send(String msg){
-        this.jmsMessagingTemplate.convertAndSend((Destination) this.topic,msg);
+        this.jmsMessagingTemplate.convertAndSend(this.topic,msg);
     }
 }

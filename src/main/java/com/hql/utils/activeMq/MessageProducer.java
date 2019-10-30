@@ -17,7 +17,7 @@ public class MessageProducer {
     private static final String ACTIVEMQ_URL = "tcp://127.0.0.1:61616";
 
     //定义发送消息得队列名称
-    private static final String QUEUE_NAME = "MyMessage";
+    private static final String QUEUE_NAME = "ActiveMqQueue";
 
     public static void main(String[] args) throws JMSException {
         //创建连接工厂

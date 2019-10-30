@@ -1,6 +1,7 @@
 package com.hql.controller;
 
 import org.springframework.jms.annotation.JmsListener;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -11,8 +12,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ActiveMqConsumerController {
 
-    @JmsListener(destination = "active.queue")
-    public void readActiveQueue(String message){
-        System.out.println("接收到的mq:"+message);
+    @JmsListener(destination = "ActiveMqQueue")
+    public void readActiveQueue(String msg){
+        System.out.println("ActiveMqQueue接收:"+msg);
+    }
+
+    //sendTo 会将此方法返回的数据  写入到OutQueue中去
+    @SendTo("SQueue")
+    @JmsListener(destination = "ActiveMqQueue")
+    public String readActiveQueue2(String message){
+        System.out.println("ActiveMqQueue2接收:"+message);
+        return message;
     }
 }

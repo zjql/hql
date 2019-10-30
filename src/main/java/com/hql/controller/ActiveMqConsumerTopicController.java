@@ -12,10 +12,10 @@ public class ActiveMqConsumerTopicController {
 
     /**
      * 监听和读取消息
-     * @param message
+     * @param msg
      */
-    @JmsListener(destination = "active.topic")
-    public void readActiveTopicMsg(String message){
-        System.out.println("主题消息接收:"+message);
+    @JmsListener(destination = "ActiveMqTopic")
+    public void readActiveTopicMsg(String msg){
+        System.out.println("ActiveMqTopic_1接收:"+msg);
     }
 }
