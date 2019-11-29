@@ -23,4 +23,9 @@ public  class StudentServiceImpl extends ServiceImpl<StudentMapper,Student> impl
     public List<Student> queryStudentId(int id) {
         return studentMapper.queryStudentId(id);
     }
+
+    @Override
+    public List<Student> queryStudnetIdCall(int id) {
+        return studentMapper.queryStudentIdCall(id);
+    }
 }

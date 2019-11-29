@@ -3,6 +3,7 @@ package com.hql.dao;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.hql.entity.Student;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -14,4 +15,7 @@ public interface StudentMapper extends BaseMapper<Student> {
     int insertSelective(Student record);
 
     List<Student> queryStudentId(int id);
+
+    @Select("CALL hqlDemo(#{id})")
+    List<Student> queryStudentIdCall(int id);
 }

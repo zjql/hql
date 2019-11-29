@@ -27,4 +27,10 @@ public class StudentController {
        List<Student> list =  studentService.queryStudentId(id);
        return R.ok().put("list",list);
     }
+
+    @RequestMapping(value = "/queryCall",method = RequestMethod.POST)
+    public R queryStudentIdCall(int id){
+       List<Student> list = studentService.queryStudnetIdCall(id);
+       return R.ok().put("list",list);
+    }
 }

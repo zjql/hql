@@ -12,4 +12,6 @@ import java.util.List;
 public interface StudentService extends IService<Student> {
 
     List<Student> queryStudentId(int id);
+
+    List<Student> queryStudnetIdCall(int id);
 }
