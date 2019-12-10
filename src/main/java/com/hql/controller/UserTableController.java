@@ -19,6 +19,7 @@ import java.util.Objects;
  */
 @RestController
 @RequestMapping()
+@CrossOrigin
 public class UserTableController {
 
     private static Logger logger = LogManager.getLogger(UserTableController.class);
