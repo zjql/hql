@@ -20,7 +20,7 @@
         <mybatisplus.version>2.2.0</mybatisplus.version>
         <mybatisplus.spring.boot.version>1.0.5</mybatisplus.spring.boot.version>
         <mybatis.version>3.4.6</mybatis.version>
-        <mysql.connector.version>5.1.6</mysql.connector.version>
+        <mysql.connector.version>8.0.28</mysql.connector.version>
         <httpcore.version>4.4.10</httpcore.version>
         <activemq.version>5.9.0</activemq.version>
     </properties>
